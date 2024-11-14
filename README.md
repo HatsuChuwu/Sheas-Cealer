@@ -2,6 +2,9 @@
 <h3 align="center">- Just Ceal It -</h3>
 </br>
 
+## 其他语言
+[English README](README_EN.md)
+
 ## 自我介绍
 **Sheas Cealer**: 一只基于 **WPF(.Net8)** 的 SNI 伪造工具
 
@@ -17,6 +20,7 @@
 4. 为避免不必要的麻烦，使用前请先阅读**注意事项**和**用户协议**
 5. Sheas Cealer 仍处于**开发阶段**，但每个正式版发布前会尽量确保其**稳定可用**
 6. Github Release 中会保留目前能够使用的**所有版本**，但强烈推荐使用**最新版**
+7. 注意事项第 3 条将从 2024.12.31 起正式严格执行
 
 ## 用户协议
 1. [隐私政策](https://thoughts.teambition.com/share/6264eda98adeb10041b92fda#title=Sheas_Cealer_隐私政策)
@@ -37,7 +41,7 @@
 [Sheas Cealer Build](https://github.com/SpaceTimee/Sheas-Cealer/wiki/Sheas-Cealer-Build)
 
 ## 项目原理
-利用 Chromium 内核的参数特性伪造 SNI 拓展标记，详细原理可参考[这篇文章](https://nicebowl.fun/24_8)
+利用 Chromium 内核的启动参数特性伪造 SNI 拓展标记，详细原理可参考[这篇文章](https://nicebowl.fun/24_8)
 
 ## 致谢名单
 * **kit: 为本项目提供全部的原理基础**
@@ -47,9 +51,17 @@
 **Space Time**
 
 ## 联系方式
-1. **QQ 群 (主群): 338919498**
+1. **QQ 群 (主群): 716266896，338919498**
 2. TG 群 (分群): [PixCealerChat](https://t.me/PixCealerChat)
 3. **邮箱: Zeus6_6@163.com**
+
+## 相关项目
+1. [Cealing Host](https://github.com/SpaceTimee/Cealing-Host): 最新的 Sheas Cealer 内置伪造规则
+2. [Sheas Dop](https://github.com/SpaceTimee/Sheas-Dop): DNS 抗污染解析工具 (Sheas Cealer 全局净化子项目)
+3. [Sheas Nginx](https://github.com/SpaceTimee/Sheas-Nginx): Pixiv Nginx 启动器 (Sheas Cealer 全局伪造 × Pixiv Nginx 合作子项目)
+4. [Bot CealingCat](https://github.com/SpaceTimee/Bot-CealingCat): 提供 Sheas Cealer 相关服务的 Telegram Bot
+5. [Console HostChecker](https://github.com/SpaceTimee/Console-HostChecker): Cealing Host 自动化检查脚本
+6. [Console HostGenerator](https://github.com/SpaceTimee/Console-HostGenerator): Cealing Host 自动化生成脚本
 
 ## 许可证
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FSpaceTimee%2FSheas-Cealer.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FSpaceTimee%2FSheas-Cealer?ref=badge_large)
