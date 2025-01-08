@@ -121,10 +121,19 @@
     <value>About Me</value>
   </data>
   <data name="AboutButtonToolTip" xml:space="preserve">
-    <value>Click to open an about window</value>
+    <value>Click to open the about window</value>
   </data>
-  <data name="BrowserPathSettingsModeName" xml:space="preserve">
-    <value>Browser Path</value>
+  <data name="BrowserButtonContent" xml:space="preserve">
+    <value>Start Cealing</value>
+  </data>
+  <data name="BrowserButtonToolTip" xml:space="preserve">
+    <value>Click to launch the injected browser</value>
+  </data>
+  <data name="ComihomoButtonIsInitingContent" xml:space="preserve">
+    <value>GLB. Purging CHA.</value>
+  </data>
+  <data name="ConginxButtonIsInitingContent" xml:space="preserve">
+    <value>GLB. Cealing INIT.</value>
   </data>
   <data name="EditHostsConfButtonContent" xml:space="preserve">
     <value>Edit Hosts Conf</value>
@@ -156,23 +165,23 @@
   <data name="EditUpstreamHostButtonToolTip" xml:space="preserve">
     <value>Click to edit upstream host</value>
   </data>
-  <data name="ExtraArgsSettingsModeName" xml:space="preserve">
-    <value>Extra Args</value>
-  </data>
   <data name="MihomoButtonIsInitingContent" xml:space="preserve">
     <value>GLB. Purging INIT.</value>
   </data>
   <data name="MihomoButtonIsRunningContent" xml:space="preserve">
-    <value>Stop Global Purging</value>
+    <value>Stop GLB. Purging</value>
   </data>
   <data name="MihomoButtonIsRunningToolTip" xml:space="preserve">
     <value>Click to stop the local Mihomo</value>
   </data>
   <data name="MihomoButtonIsStoppedContent" xml:space="preserve">
-    <value>Start Global Purging</value>
+    <value>Start GLB. Purging</value>
   </data>
   <data name="MihomoButtonIsStoppedToolTip" xml:space="preserve">
     <value>Click to launch a local Mihomo</value>
+  </data>
+  <data name="MihomoButtonIsStoppingContent" xml:space="preserve">
+    <value>GLB. Purging STP.</value>
   </data>
   <data name="NginxButtonIsInitingContent" xml:space="preserve">
     <value>GLB. Cealing INIT.</value>
@@ -193,13 +202,13 @@
     <value>Click Now</value>
   </data>
   <data name="NoClickButtonIsFlashingToolTip" xml:space="preserve">
-    <value>Click the button now</value>
+    <value>Click this button now</value>
   </data>
   <data name="NoClickButtonIsStoppedContent" xml:space="preserve">
     <value>No Clicking</value>
   </data>
   <data name="NoClickButtonIsStoppedToolTip" xml:space="preserve">
-    <value>Do not click the button</value>
+    <value>Do not click this button</value>
   </data>
   <data name="SettingsBoxBrowserPathToolTip" xml:space="preserve">
     <value>Fill in a Chromium-based browser path</value>
@@ -209,6 +218,12 @@
   </data>
   <data name="SettingsBoxUpstreamUrlToolTip" xml:space="preserve">
     <value>Fill in an upstream host URL</value>
+  </data>
+  <data name="SettingsButtonContent" xml:space="preserve">
+    <value>Appearance Settings</value>
+  </data>
+  <data name="SettingsButtonToolTip" xml:space="preserve">
+    <value>Click to open the settings window</value>
   </data>
   <data name="SettingsFunctionButtonBrowserPathContent" xml:space="preserve">
     <value>Browse Path</value>
@@ -222,26 +237,17 @@
   <data name="SettingsFunctionButtonUpstreamUrlContent" xml:space="preserve">
     <value>Reset URL</value>
   </data>
+  <data name="SettingsModeButtonBrowserPathContent" xml:space="preserve">
+    <value>Browser Path</value>
+  </data>
+  <data name="SettingsModeButtonExtraArgsContent" xml:space="preserve">
+    <value>Extra Args</value>
+  </data>
   <data name="SettingsModeButtonToolTip" xml:space="preserve">
     <value>Click to switch settings</value>
   </data>
-  <data name="StartButtonContent" xml:space="preserve">
-    <value>Start Cealing</value>
-  </data>
-  <data name="StartButtonToolTip" xml:space="preserve">
-    <value>Click to launch an injected browser</value>
-  </data>
-  <data name="ThemesButtonDarkThemeContent" xml:space="preserve">
-    <value>Auto Theme</value>
-  </data>
-  <data name="ThemesButtonInheritThemeContent" xml:space="preserve">
-    <value>Dark Theme</value>
-  </data>
-  <data name="ThemesButtonLightThemeContent" xml:space="preserve">
-    <value>Light Theme</value>
-  </data>
-  <data name="ThemesButtonToolTip" xml:space="preserve">
-    <value>Click to switch themes</value>
+  <data name="SettingsModeButtonUpstreamUrlContent" xml:space="preserve">
+    <value>Upstream URL</value>
   </data>
   <data name="UpdateUpstreamHostButtonContent" xml:space="preserve">
     <value>Update Upstream Host</value>
@@ -249,55 +255,67 @@
   <data name="UpdateUpstreamHostButtonToolTip" xml:space="preserve">
     <value>Click to update upstream host</value>
   </data>
-  <data name="UpstreamUrlSettingsModeName" xml:space="preserve">
-    <value>Upstream URL</value>
-  </data>
   <data name="_BrowserPathDialogFilterFileType" xml:space="preserve">
     <value>Browser</value>
   </data>
-  <data name="_ConfErrorMsg" xml:space="preserve">
-    <value>The config cannot be recognized. Check if the config contain syntax errors</value>
+  <data name="_CealHostErrorPrompt" xml:space="preserve">
+    <value>Some cealing hosts contain syntax errors and cannot be recognized. Do you want to continue anyway?</value>
   </data>
   <data name="_GameClickOnceMsg" xml:space="preserve">
-    <value>I know you would do it, but nothing will actually happen. Whee.</value>
+    <value>I know you would click me, but nothing will actually happen. Whee~</value>
   </data>
   <data name="_GameClickThreeMsg" xml:space="preserve">
-    <value>Ugh, what are you doing. Please stop, I don't want to hurt anyone. Stop please, this is your last chance. Ugh, I can't control it anymore.</value>
+    <value>Ugh, what are you doing. Please stop, I don't want to hurt anyone. Stop please, this is your last chance. Ugh, I can't control it anymore</value>
   </data>
   <data name="_GameClickTwiceMsg" xml:space="preserve">
-    <value>No no no, don't click me. Sorry, I shouldn't have lied to you, I am a cursed button, and continuing to click me will bring disaster to the entire Sheas Cealer. Please believe me, this is not a game, and there are no new features here. Listen to me and use the normal functions, okay?</value>
+    <value>No no no, don't click me. Sorry, I shouldn't have lied to you, I am a cursed button, and continuing to click me will bring disaster to the entire Sheas Cealer. Please believe me. This is not a game, and there are no new features here. Listen to me and use the normal functions. Please</value>
   </data>
   <data name="_GameEndingMsg" xml:space="preserve">
-    <value>You defeated the evil button and saved Sheas Cealer, you are hero</value>
+    <value>You defeated the evil button and saved Sheas Cealer. You are the HERO!</value>
   </data>
   <data name="_GameGradeMsg" xml:space="preserve">
     <value>Button Remaining HP.</value>
   </data>
   <data name="_GameReviewEndingMsg" xml:space="preserve">
-    <value>It's dead, and you're the hero of Sheas Cealer</value>
+    <value>It's dead. You're the HERO of Sheas Cealer</value>
   </data>
   <data name="_GameStartMsg" xml:space="preserve">
-    <value>No, please kill me, I...can't control myself...</value>
-  </data>
-  <data name="_HostErrorMsg" xml:space="preserve">
-    <value>The args cannot be recognized. Check if the hosts contain syntax errors</value>
+    <value>No, please kill me. I... can't control it...</value>
   </data>
   <data name="_KillBrowserProcessPrompt" xml:space="preserve">
     <value>All processes of the selected browser will be closed before launching. Do you want to continue?</value>
   </data>
+  <data name="_LaunchHostsNginxPrompt" xml:space="preserve">
+    <value>You are using hosts-based non-wildcard domain global cealing. Do you want to continue?</value>
+  </data>
+  <data name="_LaunchMihomoErrorMsg" xml:space="preserve">
+    <value>Mihomo failed to launch</value>
+  </data>
+  <data name="_LaunchNginxErrorPrompt" xml:space="preserve">
+    <value>Nginx failed to launch. Do you want to open the error log?</value>
+  </data>
   <data name="_LaunchNginxFlashingPrompt" xml:space="preserve">
-    <value>Warning: The proxy core is under attack and cannot forge SNI. The SNI removal mode has been turned on urgently. Do you want to continue?</value>
+    <value>Warning: The proxy core is under attack and failes to conceal SNI. The SNI removal mode has been turned on urgently. Do you want to continue?</value>
   </data>
   <data name="_LaunchProxyPrompt" xml:space="preserve">
     <value>Please remember to come back and stop the proxy manually after use. Do you want to continue?</value>
   </data>
+  <data name="_MihomoConfErrorMsg" xml:space="preserve">
+    <value>The mihomo conf contains syntax errors and cannot be recognized</value>
+  </data>
+  <data name="_NginxHttpPortOccupiedPrompt" xml:space="preserve">
+    <value>The local port 80 is occupied. Do you want to use port {0} to continue? This may cause the http connection to fail to automatically jump to https</value>
+  </data>
+  <data name="_NginxHttpsPortOccupiedPrompt" xml:space="preserve">
+    <value>The local port 443 is occupied. Do you want to use port {0} to continue? This may cause the global cealing to not work properly</value>
+  </data>
   <data name="_OverrideUpstreamHostPrompt" xml:space="preserve">
-    <value>There is an update available. Do you want to update upstream host? If No it will only open the upstream host page for you</value>
+    <value>There is an update available. Do you want to update upstream host? If No it will only open the upstream host web page for you</value>
   </data>
   <data name="_UpdateUpstreamHostSuccessMsg" xml:space="preserve">
     <value>Update successfully</value>
   </data>
   <data name="_UpstreamHostUtdMsg" xml:space="preserve">
-    <value>Upstream host has been updated to the latest</value>
+    <value>Upstream host is already up to date</value>
   </data>
 </root>

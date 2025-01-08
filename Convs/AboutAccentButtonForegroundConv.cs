@@ -1,19 +1,17 @@
 ﻿using System;
 using System.Globalization;
 using System.Windows.Data;
-using Sheas_Cealer.Consts;
+using System.Windows.Media;
 
 namespace Sheas_Cealer.Convs;
 
-internal class MainThemesButtonContentConv : IValueConverter
+internal class AboutAccentButtonForegroundConv : IValueConverter
 {
     public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
     {
-        bool? isLightMode = value as bool?;
+        Color accentForegroundColor = (Color)value;
 
-        return isLightMode.HasValue ?
-            isLightMode.GetValueOrDefault() ? MainConst.ThemesButtonLightThemeContent : MainConst.ThemesButtonDarkThemeContent :
-            MainConst.ThemesButtonInheritThemeContent;
+        return new SolidColorBrush(accentForegroundColor);
     }
 
     public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture) => throw new NotImplementedException();

@@ -1,19 +1,20 @@
-﻿using System;
-using System.Diagnostics;
-using System.IO;
-using CommunityToolkit.Mvvm.ComponentModel;
-using MaterialDesignThemes.Wpf;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
 using Microsoft.Win32;
 using Sheas_Cealer.Consts;
 using Sheas_Cealer.Props;
+using System;
+using System.Diagnostics;
+using System.IO;
 using File = System.IO.File;
 
 namespace Sheas_Cealer.Preses;
 
-internal partial class MainPres : ObservableObject
+internal partial class MainPres : GlobalPres
 {
-    internal MainPres(string[] args)
+    internal MainPres()
     {
+        string[] args = Environment.GetCommandLineArgs();
+
         int browserPathIndex = Array.FindIndex(args, arg => arg.Equals("-b", StringComparison.OrdinalIgnoreCase)) + 1;
         int upstreamUrlIndex = Array.FindIndex(args, arg => arg.Equals("-u", StringComparison.OrdinalIgnoreCase)) + 1;
         int extraArgsIndex = Array.FindIndex(args, arg => arg.Equals("-e", StringComparison.OrdinalIgnoreCase)) + 1;
@@ -41,45 +42,46 @@ internal partial class MainPres : ObservableObject
     private string browserPath;
     partial void OnBrowserPathChanged(string value)
     {
-        if (File.Exists(value) && Path.GetFileName(value).ToLowerInvariant().EndsWith(".exe"))
-        {
-            Settings.Default.BrowserPath = value;
-            Settings.Default.Save();
-        }
+        if (!File.Exists(value) || !Path.GetFileName(value).ToLowerInvariant().EndsWith(".exe"))
+            return;
+
+        Settings.Default.BrowserPath = value;
+        Settings.Default.Save();
     }
 
     [ObservableProperty]
     private string upstreamUrl;
     partial void OnUpstreamUrlChanged(string value)
     {
-        if (MainConst.UpstreamUrlRegex().IsMatch(value))
-        {
-            Settings.Default.UpstreamUrl = value;
-            Settings.Default.Save();
-        }
+        if (!MainConst.UpstreamUrlRegex().IsMatch(value))
+            return;
+
+        Settings.Default.UpstreamUrl = value;
+        Settings.Default.Save();
     }
 
     [ObservableProperty]
     private string extraArgs;
     partial void OnExtraArgsChanged(string value)
     {
-        if (MainConst.ExtraArgsRegex().IsMatch(value))
-        {
-            Settings.Default.ExtraArgs = value;
-            Settings.Default.Save();
-        }
+        if (!MainConst.ExtraArgsRegex().IsMatch(value))
+            return;
+
+        Settings.Default.ExtraArgs = value;
+        Settings.Default.Save();
     }
 
     [ObservableProperty]
-    private bool? isLightTheme = null;
-    partial void OnIsLightThemeChanged(bool? value)
-    {
-        PaletteHelper paletteHelper = new();
-        Theme newTheme = paletteHelper.GetTheme();
+    private bool isUpstreamHostUtd = true;
 
-        newTheme.SetBaseTheme(value.HasValue ? value.GetValueOrDefault() ? BaseTheme.Light : BaseTheme.Dark : BaseTheme.Inherit);
-        paletteHelper.SetTheme(newTheme);
-    }
+    [ObservableProperty]
+    private bool isCoproxyIniting = false;
+
+    [ObservableProperty]
+    private bool isCoproxyStopping = false;
+
+    [ObservableProperty]
+    private bool isConginxExist = File.Exists(MainConst.ConginxPath);
 
     [ObservableProperty]
     private bool isNginxExist = File.Exists(MainConst.NginxPath);
@@ -88,13 +90,25 @@ internal partial class MainPres : ObservableObject
     private bool isNginxIniting = false;
 
     [ObservableProperty]
+    private bool isConginxRunning = Process.GetProcessesByName(Path.GetFileNameWithoutExtension(MainConst.ConginxPath)).Length != 0;
+
+    [ObservableProperty]
     private bool isNginxRunning = Process.GetProcessesByName(Path.GetFileNameWithoutExtension(MainConst.NginxPath)).Length != 0;
+
+    [ObservableProperty]
+    private bool isComihomoExist = File.Exists(MainConst.ComihomoPath);
 
     [ObservableProperty]
     private bool isMihomoExist = File.Exists(MainConst.MihomoPath);
 
     [ObservableProperty]
+    private bool isComihomoIniting = false;
+
+    [ObservableProperty]
     private bool isMihomoIniting = false;
+
+    [ObservableProperty]
+    private bool isComihomoRunning = Process.GetProcessesByName(Path.GetFileNameWithoutExtension(MainConst.ComihomoPath)).Length != 0;
 
     [ObservableProperty]
     private bool isMihomoRunning = Process.GetProcessesByName(Path.GetFileNameWithoutExtension(MainConst.MihomoPath)).Length != 0;
